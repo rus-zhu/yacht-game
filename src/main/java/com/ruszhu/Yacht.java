@@ -8,6 +8,10 @@ public class Yacht {
         this.dieRoller = dieRoller;
     }
 
+    public Yacht() {
+        this.dieRoller = new RandomDieRoller();
+    }
+
     public String rollDice() {
         String result = "";
         for (int i = 0; i < 5; i++) {
@@ -17,12 +21,17 @@ public class Yacht {
     }
 
     public int scoreAsOnes(String roll) {
-        int score = 0;
-        for (int i = 0; i < roll.length(); i++) {
-            if (roll.substring(i, i + 1).equals("1")) {
-                score++;
-            }
-        }
-        return score;
+        return calculateScore(roll, '1', 1);
+    }
+
+    public int scoreAsFives(String roll) {
+        return calculateScore(roll, '5', 5);
+    }
+
+    private static int calculateScore(String roll, char ch, int value) {
+        int count = (int) (roll.chars()
+                .filter(c -> c == ch)
+                .count());
+        return count * value;
     }
 }
