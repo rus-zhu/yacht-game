@@ -14,7 +14,7 @@ public class YachtScoringNumberCategoriesTest {
 
         String roll = yacht.rollDice();
 
-        int score = yacht.scoreAsOnes("23456");
+        int score = yacht.scoreAsOnes(List.of(2, 3, 4, 5, 6));
 
         assertThat(score)
                 .isZero();
@@ -24,7 +24,7 @@ public class YachtScoringNumberCategoriesTest {
     public void rollOf12345ResultsInScoreOf1ForOnesCategory() throws Exception {
         Yacht yacht = new Yacht();
 
-        int score = yacht.scoreAsOnes("12345");
+        int score = yacht.scoreAsOnes(List.of(1, 2, 3, 4, 5));
 
         assertThat(score)
                 .isEqualTo(1);
@@ -34,7 +34,7 @@ public class YachtScoringNumberCategoriesTest {
     public void rollOf11111ResultsInScoreOf5ForOnesCategory() throws Exception {
         Yacht yacht = new Yacht();
 
-        int score = yacht.scoreAsOnes("11111");
+        int score = yacht.scoreAsOnes(List.of(1, 1, 1, 1, 1));
 
         assertThat(score)
                 .isEqualTo(5);
@@ -44,7 +44,7 @@ public class YachtScoringNumberCategoriesTest {
     public void rollsOf12346ScoresForFivesCategory() throws Exception {
         Yacht yacht = new Yacht();
 
-        int score = yacht.scoreAsFives("12346");
+        int score = yacht.scoreAsFives(List.of(1, 2, 3, 4, 6));
 
         assertThat(score)
                 .isZero();
@@ -54,7 +54,7 @@ public class YachtScoringNumberCategoriesTest {
     public void rollOf13336Scores9ForThreesCategory() throws Exception {
         Yacht yacht = new Yacht();
 
-        int score = yacht.scoreAsThrees("13336");
+        int score = yacht.scoreAsThrees(List.of(1, 3, 3, 3, 6));
 
         assertThat(score)
                 .isEqualTo(9);
@@ -64,7 +64,7 @@ public class YachtScoringNumberCategoriesTest {
     public void rollOf12556Scores10ForFivesCategory() throws Exception {
         Yacht yacht = new Yacht();
 
-        int score = yacht.scoreAsFives("12556");
+        int score = yacht.scoreAsFives(List.of(1, 2, 5, 5, 6));
 
         assertThat(score)
                 .isEqualTo(10);
