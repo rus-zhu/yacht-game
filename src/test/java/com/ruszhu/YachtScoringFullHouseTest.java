@@ -1,6 +1,5 @@
 package com.ruszhu;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -49,8 +48,13 @@ public class YachtScoringFullHouseTest {
                 .isEqualTo(2 + 2 + 6 + 6 + 6);
     }
 
-    @Disabled("Not Yet!")
-    public void rollOf11111ScoresAs0() throws Exception {
+    @Test
+    public void rollOf55555ScoresAs0() throws Exception {
+        Yacht yacht = new Yacht();
 
+        int score = yacht.scoreAsFullHouse(List.of(5, 5, 5, 5, 5));
+
+        assertThat(score)
+                .isZero();
     }
 }
