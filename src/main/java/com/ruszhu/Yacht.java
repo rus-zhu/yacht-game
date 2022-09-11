@@ -34,7 +34,7 @@ public class Yacht {
         return calculateScore(roll, '5', 5);
     }
 
-    private static int calculateScore(String roll, char dieSide, int scoreForDie) {
+    private int calculateScore(String roll, char dieSide, int scoreForDie) {
         int count = (int) (roll.chars()
                 .filter(c -> c == dieSide)
                 .count());
@@ -46,9 +46,13 @@ public class Yacht {
     }
 
     public int scoreAsTwos(List<Integer> dice) {
+        return calculateScore(dice, 2);
+    }
+
+    private int calculateScore(List<Integer> dice, int scoreCategory) {
         int count = (int) dice.stream()
-                .filter(die -> die == 2)
+                .filter(die -> die == scoreCategory)
                 .count();
-        return count * 2;
+        return count * scoreCategory;
     }
 }
