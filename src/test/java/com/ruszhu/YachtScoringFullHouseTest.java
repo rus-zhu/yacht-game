@@ -18,7 +18,7 @@ public class YachtScoringFullHouseTest {
                 .isZero();
     }
 
-    @Disabled
+    @Test
     public void rollOf33355ScoresAs19() throws Exception {
         Yacht yacht = new Yacht();
 
@@ -26,6 +26,16 @@ public class YachtScoringFullHouseTest {
 
         assertThat(score)
                 .isEqualTo(3 + 3 + 3 + 5 + 5);
+    }
+
+    @Test
+    public void rollOf51111ScoresAs0() throws Exception {
+        Yacht yacht = new Yacht();
+
+        int score = yacht.scoreAsFullHouse(List.of(5, 1, 1, 1, 1));
+
+        assertThat(score)
+                .isZero();
     }
 
     @Disabled
