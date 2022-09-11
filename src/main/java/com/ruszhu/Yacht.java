@@ -37,8 +37,16 @@ public class Yacht {
         return calculateScore(roll, 3);
     }
 
+    public int scoreAsFours(List<Integer> roll) {
+        return calculateScore(roll, 4);
+    }
+
     public int scoreAsFives(List<Integer> roll) {
         return calculateScore(roll, 5);
+    }
+
+    public int scoreAsSixes(List<Integer> roll) {
+        return calculateScore(roll, 6);
     }
 
     public int scoreAsFullHouse(List<Integer> roll) {
@@ -75,9 +83,9 @@ public class Yacht {
     }
 
     private int calculateScore(List<Integer> dice, int scoreCategory) {
-        int count = (int) dice.stream()
+        long count = dice.stream()
                 .filter(die -> die == scoreCategory)
                 .count();
-        return count * scoreCategory;
+        return (int) (count * scoreCategory);
     }
 }

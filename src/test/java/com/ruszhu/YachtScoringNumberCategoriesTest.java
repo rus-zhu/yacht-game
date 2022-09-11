@@ -79,4 +79,14 @@ public class YachtScoringNumberCategoriesTest {
         assertThat(score)
                 .isEqualTo(2 + 2);
     }
+
+    @Test
+    public void rollOf66644Scores18ForSixesCategory() throws Exception {
+        Yacht yacht = new Yacht();
+
+        int score = yacht.scoreAsSixes(List.of(6, 6, 6, 4, 4));
+
+        assertThat(score)
+                .isEqualTo(6 + 6 + 6);
+    }
 }
