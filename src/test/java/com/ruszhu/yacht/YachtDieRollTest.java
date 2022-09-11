@@ -1,4 +1,4 @@
-package com.ruszhu;
+package com.ruszhu.yacht;
 
 import org.junit.jupiter.api.Test;
 
