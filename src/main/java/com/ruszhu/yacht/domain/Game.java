@@ -7,6 +7,8 @@ public class Game {
 
     private final DiceRoller diceRoller;
 
+    private boolean isAssignedToOnesCategory = false;
+
     public Game() {
         diceRoller = new DiceRoller();
     }
@@ -24,14 +26,18 @@ public class Game {
     }
 
     public int score() {
-        return yachtScorer.scoreAsOnes(lastRoll);
+        if (isAssignedToOnesCategory) {
+            return yachtScorer.scoreAsOnes(lastRoll);
+        } else {
+            return yachtScorer.scoreAsFullHouse(lastRoll);
+        }
     }
 
     public void assignRollToNumberOnesCategory() {
-
+        isAssignedToOnesCategory = true;
     }
 
     public void assignRollToFullHouseCategory() {
-
+        isAssignedToOnesCategory = false;
     }
 }
