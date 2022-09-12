@@ -1,4 +1,4 @@
-package com.ruszhu.yacht;
+package com.ruszhu.yacht.domain;
 
 public interface DieRoller {
     int roll();
