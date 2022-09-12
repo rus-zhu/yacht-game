@@ -87,4 +87,15 @@ public class YachtScoringNumberCategoriesTest {
         assertThat(score)
                 .isEqualTo(6 + 6 + 6);
     }
+
+    @Test
+    public void oldScoreForFoursIsSameAsDiceRollBasedScore() throws Exception {
+        YachtScorer yachtScorer = new YachtScorer();
+
+        int diceRollScore = yachtScorer.scoreAsFours(DiceRoll.of(5, 5, 4, 4, 4));
+        int score = yachtScorer.scoreAsFours(List.of(5, 5, 4, 4, 4));
+
+        assertThat(diceRollScore)
+                .isEqualTo(score);
+    }
 }
