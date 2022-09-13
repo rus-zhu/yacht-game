@@ -3,7 +3,7 @@ package com.ruszhu.yacht.domain;
 public class Game {
 
     private final YachtScorer yachtScorer = new YachtScorer();
-    private DiceRoll lastRoll = new DiceRoll(0, 0, 0, 0, 0);
+    private DiceRoll lastRoll = DiceRoll.of(0, 0, 0, 0, 0);
 
     private final DiceRoller diceRoller;
 
