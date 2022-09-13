@@ -40,4 +40,8 @@ public class Game {
     public void assignRollToNumberSixesCategory() {
         score += yachtScorer.scoreAsSixes(lastRoll);
     }
+
+    public void assignRollToNumberThreesCategory() {
+        score += yachtScorer.scoreAsThrees(lastRoll);
+    }
 }
