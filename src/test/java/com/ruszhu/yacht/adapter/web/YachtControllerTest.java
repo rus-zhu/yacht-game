@@ -51,4 +51,17 @@ public class YachtControllerTest {
         assertThat(game.score())
                 .isEqualTo(2 + 2 + 2 + 4 + 4);
     }
+
+    @Test
+    public void assignDiceRoll11123ToOnesResultsInScoreOf3() throws Exception {
+        Game game = new Game(StubDiceRoller.createDiceRollerFor(1, 1, 1, 2, 3));
+
+        YachtController yachtController = new YachtController(game);
+        yachtController.rollDice();
+
+        yachtController.assignRollToCategory("ones");
+
+        assertThat(game.score())
+                .isEqualTo(1 + 1 + 1);
+    }
 }
