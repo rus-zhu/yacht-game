@@ -28,7 +28,13 @@ We know when a Game is over when all PLAYERs have filled all of their CATEGORYs 
 
 ## To Do
 
-* Full House validation broken (see disabled test)
-* Categories can currently be assigned to multiple times,
-  need to constrain to only once per category per round
-* Introduce "Die" as a value object (to replace Integer) 
+[X] Check that the score is being rendered as desired
+
+[ ] Refactor the YachtController category assignment code
+
+[ ] Full House validation broken (see disabled test)
+
+[ ] Categories can currently be assigned to multiple times,
+need to constrain to only once per category per round
+
+[ ] Introduce "Die" as a value object (to replace Integer) 
