@@ -1,6 +1,7 @@
 package com.ruszhu.yacht.adapter.web;
 
 import com.ruszhu.yacht.domain.Game;
+import com.ruszhu.yacht.domain.ScoreCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,10 +40,12 @@ public class YachtController {
 
     @PostMapping("/select-category")
     public String assignRollToCategory(@RequestParam("category") String category) {
-        if (category.equals("threes")) {
-            game.assignRollToNumberThreesCategory();
-        } else if (category.equalsIgnoreCase("ones")) {
+
+        ScoreCategory scoreCategory = ScoreCategory.valueOf(category.toUpperCase());
+        if (scoreCategory == ScoreCategory.ONES) {
             game.assignRollToNumberOnesCategory();
+        } else if (scoreCategory == ScoreCategory.THREES) {
+            game.assignRollToNumberThreesCategory();
         } else {
             game.assignRollToFullHouseCategory();
         }
