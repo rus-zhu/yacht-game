@@ -2,7 +2,8 @@ package com.ruszhu.yacht.domain;
 
 public enum ScoreCategory {
     ONES,
+    TWOS,
     THREES,
     SIXES,
-    FULLHOUSE
+    FOURS, FIVES, FULLHOUSE
 }
