@@ -5,7 +5,7 @@ public class Game {
     private DiceRoll lastRoll = DiceRoll.of(0, 0, 0, 0, 0);
 
     private final DiceRoller diceRoller;
-    private Scoreboard scoreboard = new Scoreboard();
+    private final Scoreboard scoreboard = new Scoreboard();
 
     public Game() {
         diceRoller = new DiceRoller();
@@ -25,22 +25,6 @@ public class Game {
 
     public int score() {
         return scoreboard.score();
-    }
-
-    public void assignRollToNumberOnesCategory() {
-        scoreboard.scoreAsOnes(lastRoll);
-    }
-
-    public void assignRollToNumberThreesCategory() {
-        scoreboard.scoreAsThrees(lastRoll);
-    }
-
-    public void assignRollToNumberSixesCategory() {
-        scoreboard.scoreAsSixes(lastRoll);
-    }
-
-    public void assignRollToFullHouseCategory() {
-        scoreboard.scoreAsFullHouse(lastRoll);
     }
 
     public void assignRollTo(ScoreCategory scoreCategory) {
