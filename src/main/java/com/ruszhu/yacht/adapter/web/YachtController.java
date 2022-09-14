@@ -40,15 +40,10 @@ public class YachtController {
 
     @PostMapping("/select-category")
     public String assignRollToCategory(@RequestParam("category") String category) {
-
         ScoreCategory scoreCategory = ScoreCategory.valueOf(category.toUpperCase());
-        if (scoreCategory == ScoreCategory.ONES) {
-            game.assignRollToNumberOnesCategory();
-        } else if (scoreCategory == ScoreCategory.THREES) {
-            game.assignRollToNumberThreesCategory();
-        } else {
-            game.assignRollToFullHouseCategory();
-        }
+
+        game.assignRollTo(scoreCategory);
+
         return "redirect:/rollresult";
     }
 }
