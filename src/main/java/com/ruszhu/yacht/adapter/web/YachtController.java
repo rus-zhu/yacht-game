@@ -2,6 +2,7 @@ package com.ruszhu.yacht.adapter.web;
 
 import com.ruszhu.yacht.domain.Game;
 import com.ruszhu.yacht.domain.ScoreCategory;
+import com.ruszhu.yacht.domain.ScoredCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +41,7 @@ public class YachtController {
         return "roll-result";
     }
 
-    private List<ScoreCategoryView> viewOf(List<ScoreCategory> scoredCategories) {
+    private List<ScoreCategoryView> viewOf(List<ScoredCategory> scoredCategories) {
         ScoreCategoryView view = new ScoreCategoryView();
         view.setDescription("THREEs");
         view.setDiceRoll("1 3 3 3 4");
