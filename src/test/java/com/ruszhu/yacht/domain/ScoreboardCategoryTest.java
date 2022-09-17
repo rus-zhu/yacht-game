@@ -32,13 +32,15 @@ public class ScoreboardCategoryTest {
     @Test
     public void assignTwoRollsToSeparateCategoriesReturnsTwoScoredCategories() throws Exception {
         Scoreboard scoreboard = new Scoreboard();
+
         DiceRoll diceRollSixes = DiceRoll.of(6, 4, 4, 3, 4);
         scoreboard.scoreAs(ScoreCategory.SIXES, diceRollSixes);
         DiceRoll diceRollFives = DiceRoll.of(5, 4, 5, 3, 4);
         scoreboard.scoreAs(ScoreCategory.FIVES, diceRollFives);
 
         assertThat(scoreboard.scoredCategories())
-                .hasSize(2);
+                .containsExactly(new ScoredCategory(ScoreCategory.FIVES, diceRollFives, 10),
+                        new ScoredCategory(ScoreCategory.SIXES, diceRollSixes, 6));
     }
 
 }
