@@ -38,9 +38,20 @@ We know when a Game is over when all PLAYERs have filled all of their CATEGORYs 
 
 [X] Full House validation broken (see disabled test)
 
-[ ] Categories can currently be assigned to multiple times,
-need to constrain to only once per category per round
+[ ] Constraint to only assign roll to category once per round
+Categories can currently be assigned to multiple times
 
-[] Need to reflect this constraint in the user interface
+[ ] Need to reflect this constraint in the user interface
+
+[ ] Re-roll 1 or all 5 of the dice, up to 3 times per round
+
+[ ] Add other scoring categories (should total 12 categories, which means 12 rounds):
+
+* 3-of-a-kind scores sum of dice
+* little straight(1-5) scores 30
+* big straight(2-6) scores 30
+* choice scores sum of dice, and Yacht(5-of-a-kind) scores 50
+
+[] Change full house to score 25 (...)
 
 [ ] Introduce "Die" as a value object (to replace Integer) 
