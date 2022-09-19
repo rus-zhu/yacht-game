@@ -38,12 +38,24 @@ We know when a Game is over when all PLAYERs have filled all of their CATEGORYs 
 
 [X] Full House validation broken (see disabled test)
 
-[ ] Constraint to only assign roll to category once per round
-Categories can currently be assigned to multiple times
+[X]Add die selection (checkbox) to the UI to select the dice to "hold back" from a re-roll
+
+[ ] Re-roll 1 or all 5 of the dice, up to 3 times per round
+Rule: After 3 roll, must assign to a category
+
+* Scenario: player rolls 6,6,3,2,1
+  player holds 6,6 and re-rolls other 3 dice
+  player rolls 6,5,4
+  player holds 6,6,6 and re-roll other 2 dice
+  player rolls 3,3
+  dice roll to be assigned is now 6,6,6,3,3
+  since that's all re-rolls allowed, must assign to category(e.g. Full House)
+
+[ ] Constrain to only assign roll to category once per round
 
 [ ] Need to reflect this constraint in the user interface
 
-[ ] Re-roll 1 or all 5 of the dice, up to 3 times per round
+[ ] Game is over when all categories have been assigned
 
 [ ] Add other scoring categories (should total 12 categories, which means 12 rounds):
 
